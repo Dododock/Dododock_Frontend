@@ -1,17 +1,15 @@
 import React from "react";
-import Modal from "react-modal";
-import * as S from "./Login";
+import "./Login";
+import * as S from "./style";
 
 const Login = () => {
-  return (
+  return(
     <div>
-      return (
-      <S.Modal>
-        <Modal isOpen={true}>모달입니다.</Modal>
-      </S.Modal>
-      )
+        <S.Layout>
+            안뇽
+        </S.Layout>
     </div>
-  );
+  )
 };
 
 export default Login;
