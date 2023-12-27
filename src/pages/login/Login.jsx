@@ -1,24 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Login";
+import ReactDOM from "react-dom";
 import * as S from "./style";
 import back from "../assets/back.svg";
 import BSM from "../assets/BSM.svg";
 
-export const Modal = () => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const openModalHandler = () => {
-    setIsOpen(!isOpen);
-  };
-
-  return (
+export const Modal = ({ isOpen, onClose }) => {
+  return ReactDOM.createPortal(
     <>
       <S.ModalContainer>
-        <S.ModalBtn onClick={openModalHandler}>Toggle Modal</S.ModalBtn>
         {isOpen ? (
-          <S.ModalBack onClick={openModalHandler}>
+          <S.ModalBack onClick={onClose}>
             <S.ModalView onClick={(e) => e.stopPropagation()}>
-              <S.ExitBtn onClick={() => setIsOpen(false)}>
+              <S.ExitBtn onClick={onClose}>
                 <S.ExitImg src={back} />
               </S.ExitBtn>
               <S.TextBox>
@@ -35,7 +29,8 @@ export const Modal = () => {
           </S.ModalBack>
         ) : null}
       </S.ModalContainer>
-    </>
+    </>,
+    document.body,
   );
 };
 
