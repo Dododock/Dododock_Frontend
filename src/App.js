@@ -1,3 +1,4 @@
+import Card from "./pages/Maincardbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/index.jsx";
 import Login from "./pages/login/Login";
@@ -11,6 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/Card" element={<Card />} />
         </Routes>
       </Router>
       <Login />
