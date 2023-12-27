@@ -1,19 +1,18 @@
 import { useState } from "react";
-import { Link  } from "react-router-dom";
-import Modal from "../../pages/login/Login"
-import Logo from "../../pages/assets/logo.svg"; 
+import { Link } from "react-router-dom";
+import Modal from "../../pages/login/Login";
+import Logo from "../../pages/assets/logo.svg";
 import * as S from "./index.js";
-import Logo from "../../pages/assets/dodok.svg";
 
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModalOpen = () => {
-    setIsModalOpen(true); 
+    setIsModalOpen(true);
   };
 
   const handleModalClose = () => {
-    setIsModalOpen(false); 
+    setIsModalOpen(false);
   };
 
   return (
@@ -25,7 +24,7 @@ function Header() {
       <S.Button onClick={handleModalOpen}>
         <S.Login>로그인</S.Login>
       </S.Button>
-      <Modal isOpen={isModalOpen} onClose={handleModalClose} /> 
+      <Modal isOpen={isModalOpen} onClose={handleModalClose} />
     </S.Layout>
   );
 }
