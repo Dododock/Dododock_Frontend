@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import color from "../../styles/color";
-
 
 export const Layout = styled.div`
   display: flex;
@@ -19,7 +17,7 @@ export const Title = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
-  `;
+`;
 
 export const Icon = styled.img``;
 
@@ -30,5 +28,5 @@ export const TitleText = styled.div`
 
 export const Creating = styled.button`
   border: none;
-  background:${color.white};
+  background: white;
 `;

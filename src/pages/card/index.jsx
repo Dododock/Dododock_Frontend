@@ -47,10 +47,7 @@ const tempData = [
 ];
 
 const formatDueDate = (dateStr) => {
-  const [year, month, day] = new Date(dateStr)
-    .toISOString()
-    .split("T")[0]
-    .split("-");
+  const [month, day] = new Date(dateStr).toISOString().split("T")[0].split("-");
   return `${month}월 ${day}일`;
 };
 
