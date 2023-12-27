@@ -9,16 +9,16 @@ export const Layout = styled.div`
   width: 100%;
   height: 8vh;
   overflow: hidden;
-  border-bottom: 1px solid #72837b;
 `;
+
 export const Logo = styled.img`
-  margin-left: 10px;
+  margin-left: 20px;
   margin-top: 10px;
-  height: 60px;
+  height: 30px;
 `;
 
 export const Emptybox = styled.div`
-  width: 85%;
+  width: 80%;
 `;
 
 export const Button = styled.button`
@@ -39,4 +39,5 @@ export const Login = styled.div`
   margin-bottom: 3px;
   margin-left: 7px;
   margin-right: 7px;
+  white-space: nowrap;
 `;
