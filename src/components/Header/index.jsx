@@ -5,9 +5,7 @@ import * as S from "./index.js";
 function Header() {
   return (
     <S.Layout>
-      <Link to="/">
-        {/* <S.Logo src={Logo} alt="로고" /> */}
-      </Link>
+      <Link to="/">{/* <S.Logo src={Logo} alt="로고" /> */}</Link>
       <S.Emptybox />
       <S.Button>
         <S.Login>로그인</S.Login>
