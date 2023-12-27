@@ -29,8 +29,8 @@ export const Button = styled.button`
   font-weight: 700;
   font-family: pretendard;
 
-  &:click {
-    
+  &:active {
+    background-color: ${color.gray};
   }
 `;
 

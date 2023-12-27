@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import color from "../../styles/color";
+
 
 export const Layout = styled.div`
   display: flex;
@@ -26,6 +28,7 @@ export const TitleText = styled.div`
   font-size: 1.8em;
 `;
 
-export const Creating = styled.div`
-
+export const Creating = styled.button`
+  border: none;
+  background:${color.white};
 `;
