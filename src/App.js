@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/login/Login";
 import Header from "./components/Header/index.jsx";
+import Login from "./pages/login/Login";
+import Home from "./pages/home/index.jsx";
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Router>
         <Header />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </Router>

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import Logo from "../../pages/assets/dkdrla.png";
+// import Logo from "../../pages/assets/dkdrla.png";
 import * as S from "./index.js";
 
 function Header() {
   return (
     <S.Layout>
       <Link to="/">
-        <S.Logo src={Logo} alt="로고" />
+        {/* <S.Logo src={Logo} alt="로고" /> */}
       </Link>
       <S.Emptybox />
       <S.Button>
