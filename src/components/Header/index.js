@@ -18,7 +18,7 @@ export const Logo = styled.img`
 `;
 
 export const Emptybox = styled.div`
-  width: 83%;
+  width: 85%;
 `;
 
 export const Button = styled.button`
@@ -28,6 +28,10 @@ export const Button = styled.button`
   background-color: ${color.white};
   font-weight: 700;
   font-family: pretendard;
+
+  &:click {
+    
+  }
 `;
 
 export const Login = styled.div`

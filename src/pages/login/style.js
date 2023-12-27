@@ -5,6 +5,7 @@ export const ModalContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+  z-index: 1000;
 `;
 
 export const ModalBack = styled.div`
@@ -105,5 +106,5 @@ export const Title = styled.p`
   font-weight: 600;
   line-height: normal;
   display: flex;
-  margin-left:10%;
+  margin-left: 10%;
 `;

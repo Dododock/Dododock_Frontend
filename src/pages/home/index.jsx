@@ -1,4 +1,5 @@
 import Icon from "../assets/fire-icon.svg";
+import Card from "../card/index.jsx";
 import * as S from "./index.js";
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
         </S.Title>
         <S.Creating>그룹 생성하기</S.Creating>
       </S.TextBox>
+      <Card />
     </S.Layout>
   );
 }

@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
 export const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 7%;
 `;
 
 export const TextBox = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 5%;
+  justify-content: space-between;
 `;
 
 export const Title = styled.div`
@@ -22,4 +26,6 @@ export const TitleText = styled.div`
   font-size: 1.8em;
 `;
 
-export const Creating = styled.div``;
+export const Creating = styled.div`
+
+`;
