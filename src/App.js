@@ -4,6 +4,7 @@ import Login from "./pages/login/Login";
 import Home from "./pages/home/index.jsx";
 import Card from "./pages/card/index.jsx";
 import CreatingGroup from "./pages/creatingGroup/index.jsx";
+import Detail from "./pages/detail/detail.jsx";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/Card" element={<Card />} />
           <Route path="/CreatingGroup" element={<CreatingGroup />} />
+          <Route path="/Detail/:id" element={<Detail />} />
         </Routes>
       </Router>
       <Login />

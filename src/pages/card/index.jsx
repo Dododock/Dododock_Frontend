@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import * as S from "./index";
 
 const tempData = [
@@ -66,31 +67,33 @@ const Card = () => {
     <S.CardBox>
       {data.map((data, id) => {
         return (
-          <S.BoxDiv onClick={() => navigate(data.id)}>
-            <S.DeadlineDiv>{formatDueDate(data.due)}</S.DeadlineDiv>
-            <S.DododokDiv>{data.groupName}</S.DododokDiv>
-            <S.ImageContainer>
-              <img
-                height={141}
-                width={346}
-                src="https://via.placeholder.com/150"
-                alt="thumbnail"
-              />
-            </S.ImageContainer>
-            <S.BoardDiv>
-              <h1>{data.groupName}</h1>
-              <hr />
-            </S.BoardDiv>
-            <S.ProfileDiv>
-              <img src="https://via.placeholder.com/28" alt="profile" />
-              <div>
-                <p>1학년 2반 신희성</p>
-              </div>
-            </S.ProfileDiv>
-            <S.BottomRightText>
-              {data.memberCount + "/" + data.currentMemberCount}
-            </S.BottomRightText>
-          </S.BoxDiv>
+          <Link to={`/detail/${data.id}`}>
+            <S.BoxDiv onClick={() => navigate(data.id)}>
+              <S.DeadlineDiv>{formatDueDate(data.due)}</S.DeadlineDiv>
+              <S.DododokDiv>{data.groupName}</S.DododokDiv>
+              <S.ImageContainer>
+                <img
+                  height={141}
+                  width={346}
+                  src="https://via.placeholder.com/150"
+                  alt="thumbnail"
+                />
+              </S.ImageContainer>
+              <S.BoardDiv>
+                <h1>{data.groupName}</h1>
+                <hr />
+              </S.BoardDiv>
+              <S.ProfileDiv>
+                <img src="https://via.placeholder.com/28" alt="profile" />
+                <div>
+                  <p>1학년 2반 신희성</p>
+                </div>
+              </S.ProfileDiv>
+              <S.BottomRightText>
+                {data.memberCount + "/" + data.currentMemberCount}
+              </S.BottomRightText>
+            </S.BoxDiv>
+          </Link>
         );
       })}
     </S.CardBox>
