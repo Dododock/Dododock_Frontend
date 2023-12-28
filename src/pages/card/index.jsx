@@ -95,6 +95,6 @@ const Card = () => {
       })}
     </S.CardBox>
   );
-};
+};  
 
 export default Card;
