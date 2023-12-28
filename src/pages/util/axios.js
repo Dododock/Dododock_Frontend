@@ -1,9 +1,7 @@
 import axios from "axios";
 
-const currentDomain = window.location.hostname;
-
 export const axiosInstance = axios.create({
-    baseURL: `http://${currentDomain}:5000/api`,
+    baseURL: `http://10.150.150.214:8080:/api`,
     headers: {
         "Content-Type": "application/json",
     },

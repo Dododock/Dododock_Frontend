@@ -1,10 +1,12 @@
 import * as S from "./style";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import undo from "../assets/undo.svg";
 import post from "../assets/z.png";
 import PeoplePage from "../detail/People/people";
 import ActivityPage from "./Activity/Activity";
 import DeadlinePage from "./Deadline/Deadline";
+import axiosInstance from "../util/axios";
+import { useParams } from "react-router-dom";
 
 const Detail = () => {
   const [isPeopleClicked, setIsPeopleClicked] = useState(false);
@@ -29,6 +31,25 @@ const Detail = () => {
     setIsActivityClicked(false);
   };
 
+  const { groupId } = useParams();
+
+  const getDetail = async () => {
+    try {
+      const res = await axiosInstance.get(
+        `http://10.150.150.214:8080/api/group/find/${groupId}`,
+      );
+      setData(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    getDetail();
+  }, []);
+
   return (
     <>
       <S.DetailLayout>
@@ -39,12 +60,9 @@ const Detail = () => {
         <S.PostTitleBox>
           <S.PostImg src={post} />
           <S.PostContent>
-            <S.Title>겨울은 독서의 계절 </S.Title>
+            <S.Title>{data.groupName}</S.Title>
             <S.Content>
-              <p>같이 독서하실 분 구합니다~~ </p>
-              <p>겨울은 독서의 계절이라고 누가 그랬어요 아마도</p>
-              <p>독서에 관심이 없어도 환영 있으면 매우 환영</p>
-              <p>함께 독서하고 교양을 쌓아봅시다 ㅎㅎㅎ</p>
+              <p>{data.simpleDescription}</p>
             </S.Content>
             <S.JoinBtn>참여하기</S.JoinBtn>
           </S.PostContent>
@@ -75,7 +93,5 @@ const Detail = () => {
     </>
   );
 };
-
-
 
 export default Detail;
