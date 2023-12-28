@@ -67,8 +67,8 @@ const Card = () => {
     <S.CardBox>
       {data.map((data, id) => {
         return (
-          <Link to={`/detail/${data.id}`}>
-            <S.BoxDiv onClick={() => navigate(data.id)}>
+          <S.BoxDiv onClick={() => navigate(data.id)}>
+            <Link to={`/detail/${data.id}`} style={{ textDecoration: "none" }}>
               <S.DeadlineDiv>{formatDueDate(data.due)}</S.DeadlineDiv>
               <S.DododokDiv>{data.groupName}</S.DododokDiv>
               <S.ImageContainer>
@@ -92,12 +92,12 @@ const Card = () => {
               <S.BottomRightText>
                 {data.memberCount + "/" + data.currentMemberCount}
               </S.BottomRightText>
-            </S.BoxDiv>
-          </Link>
+            </Link>
+          </S.BoxDiv>
         );
       })}
     </S.CardBox>
   );
-};  
+};
 
 export default Card;

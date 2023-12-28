@@ -18,6 +18,7 @@ function Creating() {
       due: due,
     });
   };
+
   return (
     <S.Layout>
       <S.Title>그룹 생성하기</S.Title>
