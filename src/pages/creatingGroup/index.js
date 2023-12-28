@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import color from "../../styles/color";
 
 export const Layout = styled.div`
   display: flex;
@@ -16,36 +17,55 @@ export const Title = styled.div`
 
 export const InputContainer = styled.form`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 `;
 
-export const TextBox = styled.div`
+export const Box = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10%;
+  align-items: center;
 `;
 
 export const Text = styled.label`
   font-weight: 500;
   font-size: 1.3em;
   font-family: pretendard;
+  margin-right: 4%;
 `;
 export const InputBox = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 10%;
+  flex-direction: row;
+  margin-bottom: 10%;
 `;
 
-export const NameInput = styled.input``;
+export const NameInput = styled.input`
+  margin-left: 30%;
+`;
 
-export const TypeInput = styled.input``;
+export const TypeInput = styled.input`
+  margin-left: 30%;
+`;
 
-export const HeadCountInput = styled.input``;
+export const HeadCountInput = styled.input`
+  margin-left: 30%;
+`;
 
-export const WeekTimeInput = styled.input``;
+export const WeekTimeInput = styled.input`
+  margin-left: 30%;
+`;
 
-export const DateInput = styled.input``;
+export const DateInput = styled.input`
+  margin-left: 10%;
+`;
 
 export const Button = styled.button`
   margin-top: 10%;
+  background-color: ${color.gray};
+  border: none;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-family: pretendard;
 `;
