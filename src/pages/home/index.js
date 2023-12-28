@@ -27,6 +27,15 @@ export const TitleText = styled.div`
 `;
 
 export const Creating = styled.button`
+  display: flex;
   border: none;
+  margin: 0;
+  background: white;
+`;
+
+export const Gain = styled.button`
+  display: flex;
+  border: none;
+  margin: 0;
   background: white;
 `;

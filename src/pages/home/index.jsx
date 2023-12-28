@@ -16,6 +16,7 @@ function Home() {
         <S.Creating onClick={() => navigate(`/CreatingGroup`)}>
           그룹 생성하기
         </S.Creating>
+        <S.Gain>그룹 모아보기</S.Gain>
       </S.TextBox>
       <Card />
     </S.Layout>
