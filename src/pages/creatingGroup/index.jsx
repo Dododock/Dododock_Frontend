@@ -9,6 +9,7 @@ function Creating() {
   const [simpleDescription, setsimpleDescription] = useState("");
   const [memberCount, setmemberCount] = useState("");
   const [schedule, setschedule] = useState("");
+  const [description, setdescription] = useState("");
   const [due, setdue] = useState("");
 
   const sendDataToDB = () => {
@@ -19,8 +20,7 @@ function Creating() {
         memberCount: memberCount,
         schedule: schedule,
         due: due,
-        description: simpleDescription,
-
+        description: description,
       })
       .then((response) => {
         console.log(response);
@@ -50,7 +50,16 @@ function Creating() {
             ></S.Input>
           </S.InputBox>
           <S.InputBox>
-            <S.Text for="name">어떤 그룹인지 알려주세요.</S.Text>
+            <S.Text for="description">그룹을 한 줄 소개해주세요.</S.Text>
+            <S.Input
+              type="text"
+              name="description"
+              placeholder="책을 읽읍시다!"
+              onChange={(e) => setdescription(e.target.value)}
+            ></S.Input>
+          </S.InputBox>
+          <S.InputBox>
+            <S.Text for="type">어떤 그룹인지 알려주세요.</S.Text>
             <S.Input
               type="text"
               name="type"
@@ -59,7 +68,7 @@ function Creating() {
             ></S.Input>
           </S.InputBox>
           <S.InputBox>
-            <S.Text for="name">최대 참여 인원 수를 알려주세요.</S.Text>
+            <S.Text for="headCount">최대 참여 인원 수를 알려주세요.</S.Text>
             <S.Input
               type="number"
               name="HeadCount"
@@ -68,21 +77,20 @@ function Creating() {
             ></S.Input>
           </S.InputBox>
           <S.InputBox>
-            <S.Text for="name">1주일 활동 횟수를 알려주세요.</S.Text>
+            <S.Text for="type">1주에 몇 번 하는지 말해주세요.</S.Text>
             <S.Input
-              type="text"
-              name="WeekTime"
-              placeholder="ex) 1주일에 3번"
-              onClick={(e) => setschedule(e.target.value)}
+              type="date"
+              name="type"
+              onChange={(e) => setschedule(e.target.value)}
             ></S.Input>
           </S.InputBox>
           <S.InputBox>
-            <S.Text for="name">그룹 모집 마감 날자를 알려주세요.</S.Text>
+            <S.Text for="type">1주에 몇 번 하는지 말해주세요.</S.Text>
             <S.Input
-              type="date"
-              name="DateInput"
-              placeholder="ex) 1주일에 3번"
-              onClick={(e) => setdue(e.target.value)}
+              type="text"
+              name="type"
+              placeholder="ex) 일주일에 세 번 "
+              onChange={(e) => setdue(e.target.value)}
             ></S.Input>
           </S.InputBox>
         </S.Box>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import color from "../../styles/color";
 
 export const Layout = styled.div`
   display: flex;
@@ -52,6 +53,13 @@ export const Input = styled.input`
   justify-content: center;
   align-items: center;
   margin: auto;
+  border: none;
+  border-bottom: 1px solid ${color.gray};
+
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Button = styled.button`
