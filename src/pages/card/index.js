@@ -22,7 +22,7 @@ export const BoxDiv = styled.div`
   cursor: pointer;
   position: relative;
   margin-top: 20px;
-  
+
   &:hover {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
   }

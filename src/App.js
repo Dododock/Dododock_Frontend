@@ -5,7 +5,6 @@ import Home from "./pages/home/index.jsx";
 import Card from "./pages/card/index.jsx";
 import CreatingGroup from "./pages/creatingGroup/index.jsx";
 import Detail from "./pages/detail/detail.jsx";
-import Gain from "./pages/gain/index.jsx";
 
 const App = () => {
   return (
@@ -18,7 +17,6 @@ const App = () => {
           <Route path="/Card" element={<Card />} />
           <Route path="/CreatingGroup" element={<CreatingGroup />} />
           <Route path="/Detail/:id" element={<Detail />} />
-          <Route path="/Gain" element={<Gain />} />
         </Routes>
       </Router>
       <Login />

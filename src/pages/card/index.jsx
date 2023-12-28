@@ -1,7 +1,51 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axiosInstance from "../util/axios";
 import * as S from "./index";
+
+const tempData = [
+  {
+    id: 1,
+    groupName: "그룹 이름입니다",
+    due: "2023-12-27",
+    currentMemberCount: 5,
+    memberCount: 2,
+  },
+  {
+    id: 2,
+    groupName: "그룹 이름입니다",
+    due: "2023-12-27",
+    currentMemberCount: 5,
+    memberCount: 1,
+  },
+  {
+    id: 3,
+    groupName: "그룹 이름입니다",
+    due: "2023-12-27",
+    currentMemberCount: 5,
+    memberCount: 0,
+  },
+  {
+    id: 4,
+    groupName: "그룹 이름입니다",
+    due: "2023-12-27",
+    currentMemberCount: 5,
+    memberCount: 2,
+  },
+  {
+    id: 5,
+    groupName: "그룹 이름입니다",
+    due: "2023-12-27",
+    currentMemberCount: 5,
+    memberCount: 1,
+  },
+  {
+    id: 6,
+    groupName: "그룹 이름입니다",
+    due: "2023-12-27",
+    currentMemberCount: 5,
+    memberCount: 0,
+  },
+];
 
 const formatDueDate = (dateStr) => {
   const [month, day] = new Date(dateStr).toISOString().split("T")[0].split("-");
@@ -10,22 +54,10 @@ const formatDueDate = (dateStr) => {
 
 const Card = () => {
   const [data, setData] = useState([]);
-  
-  useEffect(() => {
-    axiosInstance
-      .get("/group/find/all")
-      .then((response) => {
-        if (Array.isArray(response.data)) {
-          setData(response.data);
-        } else {
-          throw new Error("Data received from server is not an array");
-        }
-      })
-      .catch((error) => {
-        console.error("An error occurred while fetching data: ", error);
-      });
-  }, []);
 
+  useEffect(() => {
+    setData(tempData);
+  }, []);
 
   const navigate = (id) => {
     console.log(`Go to post/${id}`);
