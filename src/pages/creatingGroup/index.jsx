@@ -1,6 +1,14 @@
 import * as S from "./index.js";
+import axiosInstance from "../util/axios";
+
 
 function Creating() {
+  const sendDataToDB = () => {
+    axiosInstance.post('/create', {
+      title: title,
+      detail: detail,
+    });
+  };
   return (
     <S.Layout>
       <S.Title>그룹 생성하기</S.Title>
