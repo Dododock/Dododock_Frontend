@@ -5,8 +5,12 @@ export const axiosInstance = axios.create({
     headers: {
         "Content-Type": "application/json",
     },
-    // withCredentials: true  // 이렇게 설정하면 요청시에 자동으로 쿠키가 포함됩니다.
 });
 
+axiosInstance.interceptors.request.use((config) => {
+    const token = localStorage.getItem("accessToken");
+    config.headers.Authorization = token;
+    return config;
+  });
 
 export default axiosInstance;
