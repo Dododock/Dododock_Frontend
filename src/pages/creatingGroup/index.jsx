@@ -19,6 +19,8 @@ function Creating() {
         memberCount: memberCount,
         schedule: schedule,
         due: due,
+        description: simpleDescription,
+
       })
       .then((response) => {
         console.log(response);
