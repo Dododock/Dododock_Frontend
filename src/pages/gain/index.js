@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const GainLayout = styled.div`
   display: flex;
-  align-items: center;
 `;
 
 export const GainText = styled.p`
