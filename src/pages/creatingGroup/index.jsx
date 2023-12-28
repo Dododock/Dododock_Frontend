@@ -1,8 +1,10 @@
 import { useState } from "react";
 import * as S from "./index.js";
 import axiosInstance from "../util/axios";
+import { useNavigate } from "react-router-dom";
 
 function Creating() {
+  const navigate = useNavigate();
   const [groupName, setgroupName] = useState("");
   const [simpleDescription, setsimpleDescription] = useState("");
   const [memberCount, setmemberCount] = useState("");
@@ -10,13 +12,25 @@ function Creating() {
   const [due, setdue] = useState("");
 
   const sendDataToDB = () => {
-    axiosInstance.post("/room/create", {
-      groupName: groupName,
-      simpleDescription: simpleDescription,
-      memberCount: memberCount,
-      schedule: schedule,
-      due: due,
-    });
+    axiosInstance
+      .post("/group/create", {
+        groupName: groupName,
+        simpleDescription: simpleDescription,
+        memberCount: memberCount,
+        schedule: schedule,
+        due: due,
+      })
+      .then((response) => {
+        console.log(response);
+        goHome();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const goHome = () => {
+    navigate("/");
   };
 
   return (
@@ -73,6 +87,7 @@ function Creating() {
         <S.Button
           onClick={() => {
             sendDataToDB();
+            goHome();
           }}
         >
           생성하기
