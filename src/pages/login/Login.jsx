@@ -6,6 +6,11 @@ import back from "../assets/back.svg";
 import BSM from "../assets/BSM.svg";
 
 export const Modal = ({ isOpen, onClose }) => {
+
+  const handleLoginClick = () => {
+    window.location.href = "https://auth.bssm.kro.kr/oauth?clientId=75711f76&redirectURI=http://localhost:3000/oauth";
+  };
+
   return ReactDOM.createPortal(
     <>
       <S.ModalContainer>
@@ -23,7 +28,7 @@ export const Modal = ({ isOpen, onClose }) => {
               </S.TextBox>
               <S.LoginBtnBox>
                 <S.Logo src={BSM} />
-                <S.Title>BSM으로 로그인하기</S.Title>
+                <S.Title onClick={handleLoginClick}>BSM으로 로그인하기</S.Title>
               </S.LoginBtnBox>
             </S.ModalView>
           </S.ModalBack>
