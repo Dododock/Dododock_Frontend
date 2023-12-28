@@ -20,7 +20,7 @@ const YourComponent = () => {
         }
     }
     })()
-    
+    window.location.href = "/";
   }, [location.search]);
 
   return (
