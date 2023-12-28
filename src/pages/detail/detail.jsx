@@ -7,6 +7,7 @@ import ActivityPage from "./Activity/Activity";
 import DeadlinePage from "./Deadline/Deadline";
 import axiosInstance from "../util/axios";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Detail = () => {
   const [isPeopleClicked, setIsPeopleClicked] = useState(false);
