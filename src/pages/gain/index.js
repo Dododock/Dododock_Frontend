@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
-export const GainLayout = styled.div``;
+export const GainLayout = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-export const Gain = styled.p`
+export const GainText = styled.p`
   color: var(--Black, #000);
   font-family: Pretendard;
   font-size: 32px;
